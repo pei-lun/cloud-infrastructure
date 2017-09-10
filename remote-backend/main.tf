@@ -4,5 +4,9 @@ provider "aws" {
 
 resource "aws_s3_bucket" "terraform_backend_bucket" {
   bucket_prefix = "terraform-backend-"
-  region = "us-west-2"
+  region        = "us-west-2"
+
+  versioning {
+    enabled = true
+  }
 }

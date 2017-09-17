@@ -10,3 +10,7 @@ resource "aws_s3_bucket" "terraform_backend_bucket" {
     enabled = true
   }
 }
+
+output "terraform_backend_bucket" {
+  value = "${aws_s3_bucket.terraform_backend_bucket.id}"
+}
